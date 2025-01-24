@@ -27,7 +27,7 @@ function snack(arr) {
     console.log(arr);
     
 }
-snack(arr =["1","2","3","4"]);
+snack(["1","2","3","4"]);
 
 function number(arr1){
 
@@ -43,7 +43,7 @@ number(arr2);
 function shiftandUnshift(arr3){
     arr3.shift();
     console.log(arr3);
-    
+
 }
 let arr3 =[1,2,34,56,67]
 shiftandUnshift(arr3)
