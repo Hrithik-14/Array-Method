@@ -937,16 +937,16 @@
 // let ressult = obj.map((a,b) => a + b.age);
 
 
-class  Products{
-    constructor(name,price){
-        this.name = name;
-        this.price = price; 
-    }
-    displayProduct(){
-        console.log(`Product ${this.name}`);
-        console.log(`Price  ${this.price}`);
-    }
-}
+// class  Products{
+//     constructor(name,price){
+//         this.name = name;
+//         this.price = price; 
+//     }
+//     displayProduct(){
+//         console.log(`Product ${this.name}`);
+//         console.log(`Price  ${this.price}`);
+//     }
+// }
 
 
 
