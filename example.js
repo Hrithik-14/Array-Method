@@ -151,7 +151,8 @@ function Add(a,b,c){
 console.log(Add(2,4,5))
 
 
-Currying
+// Currying-It breaks down a function with multiple argument
+//into series of function  that takes a single argument
 
 
 function Add(a){
