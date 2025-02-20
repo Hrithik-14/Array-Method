@@ -1,300 +1,303 @@
-var x = 10;
-if(x%2==0) {
-    console.log(x);
-    console.log("even");
-}
+// var x = 10;
+// if(x%2==0) {
+//     console.log(x);
+//     console.log("even");
+// }
 
 
 
-var a = 100
-{
-    var a =10;
-    let b = 20;
-    const c = 30;
+// var a = 100
+// {
+//     var a =10;
+//     let b = 20;
+//     const c = 30;
 
-    console.log(a);
-    console.log(b);
-    console.log(c);
-}
-console.log(a);
-
-
-let num = 4;
-
-num = String(num)
-
-console.log(num, typeof num);
-function outer(){
-    inner()
-}
-function inner(){
-    console.log("ghhgupue");
-}
-outer()
+//     console.log(a);
+//     console.log(b);
+//     console.log(c);
+// }
+// console.log(a);
 
 
-class Person {
-    constructor(name, age) {
-        this.name = name;
-        this.age = age;
-    }
-}
-const john = new Person("John", 30);
-console.log(john.name); 
+// let num = 4;
 
-const person = {
-    name: "Alex",
-    age: 30,
-    address: {
-        city:"New York",
-        zipCode: "10001"
-    }
-}
+// num = String(num)
+
+// console.log(num, typeof num);
+// function outer(){
+//     inner()
+// }
+// function inner(){
+//     console.log("ghhgupue");
+// }
+// outer()
 
 
-// shallow copy 1
-const shallowCopy = {...person};
-shallowCopy.address.city = "Los Angeles"
+// class Person {
+//     constructor(name, age) {
+//         this.name = name;
+//         this.age = age;
+//     }
+// }
+// const john = new Person("John", 30);
+// console.log(john.name); 
+
+// const person = {
+//     name: "Alex",
+//     age: 30,
+//     address: {
+//         city:"New York",
+//         zipCode: "10001"
+//     }
+// }
 
 
-console.log(person.address.city);
+// // shallow copy 1
+// const shallowCopy = {...person};
+// shallowCopy.address.city = "Los Angeles"
 
 
-// shallow copy 2
-
-const shallowCopy = Object.assign({}, person);
-
-shallowCopy.address.zipCode = "354895";
-
-console.log(person.address.zipCode);
+// console.log(person.address.city);
 
 
-class User {
-    constructor(username, email, password){
-        this.username = username;
-        this.email = email;
-        this.password = password;
-    }
-    encryptPassword(){
-        return `${this.password}abc`
-    }
-    ChangeUsername(){
-        return `${this.username.toUpperCase()}`
-    }
-}
-const chai = new User("chai", "chai@gmail.com","123")
+// // shallow copy 2
 
-class Bikes {
-    constructor(model_name,colour,price){
-        this.model_name = model_name;
-        this.colour = colour;
-        this.price = price;
-    }
-    bikeDetails(){
-        console.log("Bike: " + this.model_name);
-        console.log("Colour: " + this.colour);
-        console.log("Price: " + this.price);
-    }
-    showPrice(){
-        console.log("Price of " + this.model_name + "is " + this.price);
+// const shallowCopy = Object.assign({}, person);
+
+// shallowCopy.address.zipCode = "354895";
+
+// console.log(person.address.zipCode);
+
+
+// class User {
+//     constructor(username, email, password){
+//         this.username = username;
+//         this.email = email;
+//         this.password = password;
+//     }
+//     encryptPassword(){
+//         return `${this.password}abc`
+//     }
+//     ChangeUsername(){
+//         return `${this.username.toUpperCase()}`
+//     }
+// }
+// const chai = new User("chai", "chai@gmail.com","123")
+
+// console.log(chai.email);
+
+
+// class Bikes {
+//     constructor(model_name,colour,price){
+//         this.model_name = model_name;
+//         this.colour = colour;
+//         this.price = price;
+//     }
+//     bikeDetails(){
+//         console.log("Bike: " + this.model_name);
+//         console.log("Colour: " + this.colour);
+//         console.log("Price: " + this.price);
+//     }
+//     showPrice(){
+//         console.log("Price of " + this.model_name + "is " + this.price);
         
-    }
-}
+//     }
+// }
 
 
-// inheritance
-// Base Class(Parent) - Bike
-// Derived Class(Child) - SportsBike
-
-
-
-class sportsBike extends Bikes{
-
-}
-
-let b1 = new Bikes("Hero Splendor Plus", "Red", 50000);
-let b2 = new Bikes("Honda CB Shine", "Black", 60000);
-let b3 = new Bikes("Bajaj Pulsar 150", "Blue", 70000)
-
-
-let sp1 = new sportsBike("KTM RC 200","Yellow",80000)
-
-sp1.showPrice()
-b1.bikeDetails()
+// // inheritance
+// // Base Class(Parent) - Bike
+// // Derived Class(Child) - SportsBike
 
 
 
-// Generator function
+// class sportsBike extends Bikes{
 
-function* AddNumber(a,b){
-    yield a+b;
-}
-let res = AddNumber(2,3);
-console.log(res.next().value);
+// }
+
+// let b1 = new Bikes("Hero Splendor Plus", "Red", 50000);
+// let b2 = new Bikes("Honda CB Shine", "Black", 60000);
+// let b3 = new Bikes("Bajaj Pulsar 150", "Blue", 70000)
 
 
-function* fun(){
-    yield "Hello";
-    yield "hi";
-}
-let resu = fun();
-console.log(resu.next().value,resu.next().value);
+// let sp1 = new sportsBike("KTM RC 200","Yellow",80000)
+
+// sp1.showPrice()
+// b1.bikeDetails()
 
 
 
+// // Generator function
+
+// function* AddNumber(a,b){
+//     yield a+b;
+// }
+// let res = AddNumber(2,3);
+// console.log(res.next().value);
 
 
-function Add(a,b,c){
-    return a+b+c;
-}
-
-console.log(Add(2,4,5))
-
-
-// Currying-It breaks down a function with multiple argument
-//into series of function  that takes a single argument
-
-
-function Add(a){
-    return function (b){
-        return function(c){
-            return a + b + c
-        }
-    }
-}
-console.log(Add(7)(2)(3));
-
-
-
-let mypromise = new Promise((resolve,reject) => {
-    let success = true;
-    setTimeout(() => {
-        if(success){
-            resolve("Operation successful")
-        }
-        else{
-            reject("Operation failed")
-        }
-    },2000)
-})
-console.log(mypromise);
+// function* fun(){
+//     yield "Hello";
+//     yield "hi";
+// }
+// let resu = fun();
+// console.log(resu.next().value,resu.next().value);
 
 
 
 
 
-let myPromise = new Promise((resolve, reject) => {
-    let success = true; // Simulate success or failure
-    setTimeout(() => {
-        if (success) {
-            resolve("Operation successful!");
-        } else {
-            reject("Operation failed!");
-        }
-    }, 2000);
-});
+// function Add(a,b,c){
+//     return a+b+c;
+// }
 
-console.log(myPromise);
+// console.log(Add(2,4,5))
 
 
+// // Currying-It breaks down a function with multiple argument
+// //into series of function  that takes a single argument
+
+
+// function Add(a){
+//     return function (b){
+//         return function(c){
+//             return a + b + c
+//         }
+//     }
+// }
+// console.log(Add(7)(2)(3));
+
+
+
+// let mypromise = new Promise((resolve,reject) => {
+//     let success = true;
+//     setTimeout(() => {
+//         if(success){
+//             resolve("Operation successful")
+//         }
+//         else{
+//             reject("Operation failed")
+//         }
+//     },2000)
+// })
+// console.log(mypromise);
 
 
 
 
 
-function display(){
+// let myPromise = new Promise((resolve, reject) => {
+//     let success = true; // Simulate success or failure
+//     setTimeout(() => {
+//         if (success) {
+//             resolve("Operation successful!");
+//         } else {
+//             reject("Operation failed!");
+//         }
+//     }, 2000);
+// });
 
-    return new Promise((resolve,reject)=>{
-        if(3>5){
-            setTimeout(()=>{resolve(`{name:"Hrithik",age:23}`);
+// console.log(myPromise);
 
-            })
+
+
+
+
+
+
+// function display(){
+
+//     return new Promise((resolve,reject)=>{
+//         if(3>5){
+//             setTimeout(()=>{resolve(`{name:"Hrithik",age:23}`);
+
+//             })
             
-        }
-        else{
-            setTimeout(()=>{reject("this result is false")})
-        }
+//         }
+//         else{
+//             setTimeout(()=>{reject("this result is false")})
+//         }
        
-    })
+//     })
 
-}
+// }
 
 
-display().then((data)=>{
-    console.log(data);
+// display().then((data)=>{
+//     console.log(data);
     
-}).catch((error)=>{
-    console.log(error);
+// }).catch((error)=>{
+//     console.log(error);
     
-})
+// })
 
 
 
-function displayOutput(x){
-    return new Promise((resolve,reject)=>{
-        if(x>10){
-            setTimeout(()=>resolve(`${x} is greater than 10`))
-        }
-        else{
-            setTimeout(()=>reject(`${x} is less than 10`))
-        }
-    })
-}
-displayOutput(5).then((data)=>{
-    console.log(data);
+// function displayOutput(x){
+//     return new Promise((resolve,reject)=>{
+//         if(x>10){
+//             setTimeout(()=>resolve(`${x} is greater than 10`))
+//         }
+//         else{
+//             setTimeout(()=>reject(`${x} is less than 10`))
+//         }
+//     })
+// }
+// displayOutput(5).then((data)=>{
+//     console.log(data);
     
-}).catch((error)=>{
-    console.log(error);
+// }).catch((error)=>{
+//     console.log(error);
     
-})
+// })
 
 
 
 
-function StudentAge(age){
-    return new Promise((resolve,reject)=>{
-        if(age>18){
-            setTimeout(()=>resolve(`Student ${age} is above 18`))
-        }
-        else if(age === 18){
-            setTimeout(()=>resolve(`Student ${age} is equal to 18`))
-        }
-        else{
-            setTimeout(()=>reject(`Student ${age} is below 18`))
-        }
-    })
-}
-StudentAge(18).then((data)=>{
-    console.log(data);
+// function StudentAge(age){
+//     return new Promise((resolve,reject)=>{
+//         if(age>18){
+//             setTimeout(()=>resolve(`Student ${age} is above 18`))
+//         }
+//         else if(age === 18){
+//             setTimeout(()=>resolve(`Student ${age} is equal to 18`))
+//         }
+//         else{
+//             setTimeout(()=>reject(`Student ${age} is below 18`))
+//         }
+//     })
+// }
+// StudentAge(18).then((data)=>{
+//     console.log(data);
     
-}).catch((error)=>{
-    console.log(error);
+// }).catch((error)=>{
+//     console.log(error);
     
-})
+// })
 
 
 
-async function NameIndex(){
-    let promise = new Promise((resolve,reject)=>{
-        setTimeout(()=>{
-            resolve("headings")
-        },3000)
-    })
-    document.getElementById("heading").innerHTML= await promise
-}
-NameIndex()
+// async function NameIndex(){
+//     let promise = new Promise((resolve,reject)=>{
+//         setTimeout(()=>{
+//             resolve("headings")
+//         },3000)
+//     })
+//     document.getElementById("heading").innerHTML= await promise
+// }
+// NameIndex()
 
 
 
 
-(function(){
-    fetch("https://fakestoreapi.com/products").then(responce=>{
-        return responce.json()
-    }).then((data)=>{
-        console.log(data);
+// (function(){
+//     fetch("https://fakestoreapi.com/products").then(responce=>{
+//         return responce.json()
+//     }).then((data)=>{
+//         console.log(data);
         
-    })
-})()
+//     })
+// })()
 
 
 
@@ -302,95 +305,125 @@ NameIndex()
 
 
 
-Memoization
+// Memoization
 
 
 
-function multiplyByTwo(){
-    let cache = {};
+// function multiplyByTwo(){
+//     let cache = {};
     
-    return function (num){
-        if(num in cache){
-            console.log(cache[num]);
+//     return function (num){
+//         if(num in cache){
+//             console.log(cache[num]);
             
-        }
-        else{
-            console.log("long time");
-            cache[num] = 2 * num;
-            console.log(cache[num]);
+//         }
+//         else{
+//             console.log("long time");
+//             cache[num] = 2 * num;
+//             console.log(cache[num]);
             
-        }
-    } 
+//         }
+//     } 
     
-}
+// }
 
-multiplyByTwo(8);
-multiplyByTwo(8)
+// multiplyByTwo(8);
+// multiplyByTwo(8)
 
-let multiplyByTwoObj = multiplyByTwo();
+// let multiplyByTwoObj = multiplyByTwo();
 
-multiplyByTwoObj(8)
-multiplyByTwoObj
-
-
-
-// Generator function
-
-function* multiplyByTwo(a,b){
-    yield a+b;
-}
-let result = multiplyByTwo(2,5)
-console.log(result.next().value);
+// multiplyByTwoObj(8)
+// multiplyByTwoObj
 
 
 
+// // Generator function
 
-function outer(){
-    inner()
-}
-function inner(){
-    console.log("Hey, hi from inner fn");
+// function* multiplyByTwo(a,b){
+//     yield a+b;
+// }
+// let result = multiplyByTwo(2,5)
+// console.log(result.next().value);
+
+
+
+
+// function outer(){
+//     inner()
+// }
+// function inner(){
+//     console.log("Hey, hi from inner fn");
     
-}
+// }
 
-outer();
-
-
+// outer();
 
 
 
 
-// stack overflow
 
 
-function outer(){
-    outer()
-}
-outer()
+// // stack overflow
 
 
-let p = fetch("https://fakestoreapi.com/products").then((a) =>{
-    return a.json()
-}).then((data)=> {
-    console.log(data);
+// function outer(){
+//     outer()
+// }
+// outer()
+
+
+// let p = fetch("https://fakestoreapi.com/products").then((a) =>{
+//     return a.json()
+// }).then((data)=> {
+//     console.log(data);
     
-})
+// })
+
+
+
+// function Multiply(num) {
+//     return num*num
+// }
+
+// console.log(Multiply(5));
 
 
 
 
+// async function Name(){
+//     let dres = await fetch("https://fakestoreapi.com/products")
+//     let res = dres.json();
+//     console.log(res);
+    
+// }
+
+// Name()
+
+
+// const Person = {
+//     name:"Faizy",
+//     age: 25,
+//     address:{
+//         street:"street 1",
+//         city:"city 1"
+//     }
+// }
+
+// let deepCopy = JSON.parse(JSON.stringify(Person));
+
+// deepCopy.address.city = "Chennai";
+
+// let shallowCopy = {...Person};
+
+// shallowCopy.address.city = "kochi"
+
+// console.log(shallowCopy);
+
+// console.log(Person);
 
 
 
-
-
-
-
-
-
-
-
-
+// console.log(deepCopy);
 
 
 
